@@ -4,6 +4,10 @@ type Props = {}
 
 const SignUpPage = (props: Props) => {
   return (
-    <div>SignUpPage</div>
+    <div>
+        <h1>Login</h1>
+    </div>
   )
 }
+
+export default SignUpPage
