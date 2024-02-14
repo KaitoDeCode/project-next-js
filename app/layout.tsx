@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import RecoilShell from "@/components/core/RecoilShell";
+import AppShell from "@/components/core/AppShell";
 
 const poppins = Poppins({ 
   subsets: ["latin"],
@@ -22,7 +23,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <RecoilShell>
-          {children}
+          <AppShell>
+            {children}
+          </AppShell>
         </RecoilShell>
       </body>
     </html>

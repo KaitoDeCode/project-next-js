@@ -9,9 +9,9 @@ type Props = {
 
 const AuthCard = (props: Props) => {
   return (
-    <div className='m-auto'>
-        <div>
-            <Image src={props.imgUrl} alt='img auth'/>
+    <div className='m-auto flex'>
+        <div className='rounded-lg'>
+            <Image className='object-cover' width={300} height={200} src={props.imgUrl} alt='img auth'/>
         </div>
         <div>
             {props.children}
