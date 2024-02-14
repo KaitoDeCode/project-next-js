@@ -3,6 +3,7 @@ import AuthCard from '@/components/fragments/AuthCard'
 import AuthCardContent from '@/components/fragments/AuthCardContent'
 import Link from 'next/link'
 import React from 'react'
+import { toast } from 'react-toastify'
 
 type Props = {}
 
@@ -40,10 +41,17 @@ const handleSubmit= async(e: any)=>{
   e.preventDefault()
   const formdata:FormData = new FormData(e.currentTarget)
   const api = process.env.NEXT_PUBLIC_API_URL
-  console.log(api)
-  const response = await fetch(`http://localhost:3333/api/register`,{
-    method: "POST",
-    body: formdata,
-  })
+    const response = await fetch(`${api}/register`,{
+      method: "POST",
+      body: formdata,
+    })
+    const data = await response.json();
+   if(data.status !== 201){
+      return toast.error(data.message) ;
+   }
+   toast.success("Berhasil Register")
 }
+
+
+
 export default SignUpPage

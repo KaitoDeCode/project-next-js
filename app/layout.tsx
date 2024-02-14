@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import {ToastContainer} from "react-toastify"
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import RecoilShell from "@/components/core/RecoilShell";
 import AppShell from "@/components/core/AppShell";
+import 'react-toastify/dist/ReactToastify.css';
 
 const poppins = Poppins({ 
   subsets: ["latin"],
@@ -27,6 +29,7 @@ export default function RootLayout({
             {children}
           </AppShell>
         </RecoilShell>
+        <ToastContainer/>
       </body>
     </html>
   );
