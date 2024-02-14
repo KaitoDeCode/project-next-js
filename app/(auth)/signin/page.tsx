@@ -38,7 +38,7 @@ const handleSubmit= async(e: any)=>{
    setCookie("user",{data: userData})
 
    
-   router.push('/signin')
+   router.push('/user/dashboard');
    toast.success(data.message)
   }
   return (
