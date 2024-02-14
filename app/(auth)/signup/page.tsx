@@ -34,7 +34,7 @@ const SignUpPage = (props: Props) => {
       </label>
 
       <button className='btn btn-outline btn-primary mt-5' type="submit">SignUp</button>
-      <span className='text-center font-light mt-10'>Already have an account?<Link className='underline text-primary' href={"/signin"}> Sign In!</Link></span>
+      <span className='text-center font-light mt-10 text-base'>Already have an account?<Link className='underline text-primary' href={"/signin"}> Sign In!</Link></span>
     </AuthCardContent>
   </AuthCard>
   )

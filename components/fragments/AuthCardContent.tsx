@@ -18,7 +18,7 @@ const AuthCardContent = (props: Props) => {
   return (
     <>
         <h1 className='text-primary font-bold text-3xl'>{title}</h1>
-        <p className='mb-4 mt-1 font-light text-accent-content'>{intro}</p>
+        <p className='mb-4 mt-1 font-light text-base'>{intro}</p>
         <form onSubmit={onSubmit} className='flex flex-col gap-3'>
             {children}
         </form>
