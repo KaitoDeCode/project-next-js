@@ -4,10 +4,33 @@ import AuthCardContent from '@/components/fragments/AuthCardContent'
 import Link from 'next/link'
 import React from 'react'
 import { toast } from 'react-toastify'
+import {useRouter} from "next/navigation"
 
 type Props = {}
 
 const SignUpPage = (props: Props) => {
+
+  const router = useRouter()
+
+const handleSubmit= async(e: any)=>{
+  e.preventDefault()
+  const formdata:FormData = new FormData(e.currentTarget)
+  const api = process.env.NEXT_PUBLIC_API_URL
+    const response = await fetch(`${api}/register`,{
+      method: "POST",
+      body: formdata,
+      cache: 'no-store'
+    })
+    const data = await response.json();
+    console.log(data);
+   if(data.status !== 200){
+      data.errors.forEach((error:any) => {
+        toast.error(error.message)
+      });
+   }
+   router.push('/signin')
+   toast.success(data.message)
+}
   return (
     <AuthCard imgUrl="/img/technology.jpg">
     <AuthCardContent
@@ -37,20 +60,6 @@ const SignUpPage = (props: Props) => {
   )
 }
 
-const handleSubmit= async(e: any)=>{
-  e.preventDefault()
-  const formdata:FormData = new FormData(e.currentTarget)
-  const api = process.env.NEXT_PUBLIC_API_URL
-    const response = await fetch(`${api}/register`,{
-      method: "POST",
-      body: formdata,
-    })
-    const data = await response.json();
-   if(data.status !== 201){
-      return toast.error(data.message) ;
-   }
-   toast.success("Berhasil Register")
-}
 
 
 
