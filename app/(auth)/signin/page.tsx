@@ -11,7 +11,7 @@ type Props = {}
 function SignInPage({}: Props) {
   const router = useRouter()
   const [cookies, setCookie, removeCookie] = useCookies(['user']);
-  
+
 const handleSubmit= async(e: any)=>{
   e.preventDefault()
   const formdata:FormData = new FormData(e.currentTarget)
@@ -35,12 +35,12 @@ const handleSubmit= async(e: any)=>{
     }
     const userData = data.data
   
-   setCookie("user",{data:userData})
+   setCookie("user",{data: userData})
 
+   
    router.push('/signin')
    toast.success(data.message)
-}
-
+  }
   return (
     <AuthCard imgUrl="/img/technology.jpg">
       <AuthCardContent
