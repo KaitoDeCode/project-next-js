@@ -7,11 +7,6 @@ import React from 'react'
 type Props = {}
 
 const SignUpPage = (props: Props) => {
-  function handleSubmit(e:any){
-    e.preventDefault()
-    const formdata = new FormData(e.currentTarget)
-    
-  }
   return (
     <AuthCard imgUrl="/img/technology.jpg">
     <AuthCardContent
@@ -41,4 +36,14 @@ const SignUpPage = (props: Props) => {
   )
 }
 
+const handleSubmit= async(e: any)=>{
+  e.preventDefault()
+  const formdata:FormData = new FormData(e.currentTarget)
+  const api = process.env.NEXT_PUBLIC_API_URL
+  console.log(api)
+  const response = await fetch(`http://localhost:3333/api/register`,{
+    method: "POST",
+    body: formdata,
+  })
+}
 export default SignUpPage
