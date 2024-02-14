@@ -5,10 +5,12 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 import { toast } from 'react-toastify'
+import {useCookies} from 'react-cookie'
 type Props = {}
 
 function SignInPage({}: Props) {
   const router = useRouter()
+  const [cookies, setCookie, removeCookie] = useCookies(['user']);
   
 const handleSubmit= async(e: any)=>{
   e.preventDefault()
@@ -20,7 +22,6 @@ const handleSubmit= async(e: any)=>{
       cache: 'no-store'
     })
     const data = await response.json();
-    console.log(data.data.token);
 
     if(data.status == 404){
       toast.info("Your account is not found, create an account")
@@ -32,8 +33,9 @@ const handleSubmit= async(e: any)=>{
            toast.error(error.message)
          });
     }
+    const userData = data.data
   
-    localStorage.setItem('access-token',data.data.token)
+   setCookie("user",{data:userData})
 
    router.push('/signin')
    toast.success(data.message)
