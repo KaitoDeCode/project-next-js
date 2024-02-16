@@ -1,5 +1,7 @@
 import React from 'react'
-import { BiHomeAlt2 } from "react-icons/bi"
+import { BiHomeAlt2, BiSolidHomeAlt2 } from "react-icons/bi"
+import { ImBooks } from 'react-icons/im'
+import { IoIosChatbubbles } from 'react-icons/io'
 
 type Props = {
     // children: React.ReactNode
@@ -18,16 +20,33 @@ const Drawer = (props: Props) => {
    
     <div className="drawer-side">
       <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-      <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+      
       {/* Sidebar content here */}
       <li><a>Sidebar Item 1</a></li>
       <li><a>Sidebar Item 2</a></li>
-      
-    </ul>
+    
         {/* {children} */}
     </div>
   </div>
   )
 }
+
+const listSideBar = [
+  {
+    href : '/user/dashboard',
+    text : 'Dashboard',
+    icon : <BiSolidHomeAlt2 />
+  },
+  {
+    href : '/user/courses',
+    text : 'Course',
+    icon : <ImBooks />
+  },
+  {
+    href : '/user/topics',
+    text : 'Topic',
+    icon : <IoIosChatbubbles  />
+  },
+]
 
 export default Drawer
