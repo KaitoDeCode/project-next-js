@@ -12,9 +12,9 @@ const AppShell = (props: Props) => {
     const [cookies, setCookie, removeCookie] = useCookies(['user']);
     const [user,setUser] = useRecoilState(profile)
     
-    if(user !== cookies['user'].data){
-      setUser(cookies['user'].data)
-    }
+    // if(user !== cookies['user'].data){
+    //   setUser(cookies['user'].data)
+    // }
     const currentTheme = useRecoilValue(theme)
     
     
