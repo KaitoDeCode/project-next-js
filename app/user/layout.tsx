@@ -28,7 +28,7 @@ const UserLayout = (props: Props) => {
                     <div className="drawer-content">
                         {/* Page content here */}
                         <label htmlFor="my-drawer">
-                            <a className="btn btn-ghost text-xl">Ofcas</a>
+                            <a className="btn btn-ghost text-xl">Stupid</a>
                         </label>
                     </div>
                 </div>
