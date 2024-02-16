@@ -5,6 +5,12 @@ const theme = atom({
     default: "light"
 })
 
+const profile = atom({
+    key: "profile",
+    default : {}
+})
+
 export {
-    theme
+    theme,
+    profile
 }
