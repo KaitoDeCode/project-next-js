@@ -4,7 +4,7 @@ import { profile } from "./atom";
 const userProfile = selector({
     key: 'userProfile',
     get: ({get})=>{
-        const {user} = get(profile)
+        const {user}: any = get(profile)
         return user;
     }
 })

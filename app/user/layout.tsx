@@ -34,10 +34,10 @@ const UserLayout = (props: Props) => {
                 </div>
                 <div className="flex-none gap-2">
                     <div className='flex gap-2 justify-center items-center'>
-                        <button onPointerDownCapture={handleDark} className='text-3xl'>
+                        <button onClick={handleDark} className='text-3xl'>
                             <BiSolidMoon/>
                         </button>
-                        <button onPointerDownCapture={handleLight} className='text-3xl'>
+                        <button onClick={handleLight} className='text-3xl'>
                             <BiSolidSun/>
                         </button>
                     </div>

@@ -7,10 +7,7 @@ const theme = atom({
 
 const profile = atom({
     key: "profile",
-    default : {
-        user: Object,
-        token : Object,
-    }
+    default : {}
 })
 
 export {
