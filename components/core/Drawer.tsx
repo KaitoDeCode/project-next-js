@@ -2,6 +2,8 @@ import React from 'react'
 import { BiHomeAlt2, BiSolidHomeAlt2 } from "react-icons/bi"
 import { ImBooks } from 'react-icons/im'
 import { IoIosChatbubbles } from 'react-icons/io'
+import { ListSideBarUser } from '..'
+import { ListSidebarItem } from '../elements'
 
 type Props = {
     // children: React.ReactNode
@@ -20,12 +22,13 @@ const Drawer = (props: Props) => {
    
     <div className="drawer-side">
       <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-      
-      {/* Sidebar content here */}
-      <li><a>Sidebar Item 1</a></li>
-      <li><a>Sidebar Item 2</a></li>
-    
-        {/* {children} */}
+      <ListSideBarUser>
+        {
+          listSideBar.map((data,index)=>(
+            <ListSidebarItem key={index} icon={data.icon} href={data.href} text={data.text} />
+          ))
+        }
+      </ListSideBarUser>
     </div>
   </div>
   )
